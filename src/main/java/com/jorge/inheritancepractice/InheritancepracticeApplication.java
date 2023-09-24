@@ -33,6 +33,7 @@ public class InheritancepracticeApplication implements CommandLineRunner {
 		employee1.setAge(20);
 		employee1.setEmployeeid("J0001");
 
+		employeeRepository.save(employee1);
 
 		// * Buscando a un Employee:
 
