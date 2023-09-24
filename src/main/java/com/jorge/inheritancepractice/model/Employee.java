@@ -8,15 +8,13 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Data
 public class Employee extends Person{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long employeeId;
     String role;
+    String employeeid;
 
-    public Employee(String name, int age, Long employeeid, String role) {
+    public Employee(String name, int age, String role, String employeeid) {
         super(name, age);
-        this.employeeId = employeeid;
         this.role = role;
+        this.employeeid = employeeid;
     }
 
     public Employee() {
@@ -25,8 +23,8 @@ public class Employee extends Person{
     @Override
     public String toString() {
         return "Employee{" +
-                "employeeId=" + employeeId +
-                ", role='" + role + '\'' +
+                "role='" + role + '\'' +
+                ", Id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 '}';

@@ -8,17 +8,27 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Data
 public class Client extends Person{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long clientId;
     String type;
 
-    public Client(String name, int age, Long clientId, String type) {
+    public Client(String name, int age, String type) {
         super(name, age);
-        this.clientId = clientId;
+        this.type = type;
+    }
+
+    public Client(String type) {
         this.type = type;
     }
 
     public Client() {
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "type='" + type + '\'' +
+                ", Id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
